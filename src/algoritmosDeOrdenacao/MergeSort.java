@@ -1,79 +1,42 @@
 package algoritmosDeOrdenacao;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-
 public class MergeSort {
-	public MergeSort(String nomeArq, int tamanho) throws FileNotFoundException {
-		String nomes[] = new String[tamanho];
-		try {
-			FileReader arq = new FileReader(nomeArq);
-			BufferedReader nomeAtual = new BufferedReader(arq);
-			for (int i = 0; i < tamanho; i++) {
-				nomes[i] = nomeAtual.readLine();
-			}
-			nomeAtual.close();
-		} catch (Exception e) {
-			System.out.println("Erro ao abrir o arquivo!");
-		}
-		int elementos = 1;
-		int inicio, meio, fim;
-
-		while (elementos < tamanho) {
-			inicio = 0;
-
-			while (inicio + elementos < tamanho) {
-
-				meio = inicio + elementos;
-				fim = inicio + 2 * elementos;
-
-				if (fim > tamanho)
-					fim = tamanho;
-
-				intercala(nomes, inicio, meio, fim);
-
-				inicio = fim;
-			}
-
-			elementos = elementos * 2;
+	
+	public void MergeSort(int[] A, int p, int r){
+		if(p<r) {
+			int q = p+r/2;
+			MergeSort(A,p,q);
+			MergeSort(A,q+1,r);
+			Merge(A,p,q,r);
 		}
 
 	}
 
-	private void intercala(String[] vetor, int inicio, int meio, int fim) {
-		String novoVetor[] = new String[fim - inicio];
-		int i = inicio;
-		int m = meio;
-		int pos = 0;
-		while (i < meio && m < fim) {
-			if (vetor[i].compareTo(vetor[m]) <= 0) {
-				novoVetor[pos] = vetor[i];
-				pos = pos + 1;
-				i = i + 1;
-
-			} else {
-
-				novoVetor[pos] = vetor[m];
-				pos = pos + 1;
-				m = m + 1;
+	public void Merge(int[] A, int p, int q, int r) {
+		Integer infinito = Integer.MAX_VALUE; 
+		int n1 = q - p + 1;
+		int n2 = r - q;
+		int[] L = null;
+		int[] R = null;
+		for (int i = 0; i < n1; i++) {
+			L[i] = A[p+i-1];
+		}
+		for (int j = 0; j < n2; j++) {
+			R[j] = A[q+j];
+		}
+		L[n1+1] = infinito;
+		R[n2+1] = infinito;
+		int i =1;
+		int j =1;
+		for (int k = p; k <= r; k++) {
+			if(L[i]<R[j]) {
+				A[k] = L[i];
+				i = i+1;
+			}
+			else {
+				A[k] = R[j];
+				j = j+1;
 			}
 		}
-
-		while (i < meio) {
-			novoVetor[pos] = vetor[i];
-			pos = pos + 1;
-			i = i + 1;
 		}
-
-		while (m < fim) {
-			novoVetor[pos] = vetor[m];
-			pos = pos + 1;
-			m = m + 1;
-		}
-
-		for (pos = 0, i = inicio; i < fim; i++, pos++) {
-			vetor[i] = novoVetor[pos];
-		}
-	}
 }
