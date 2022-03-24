@@ -2,18 +2,18 @@ package algoritmosDeOrdenacao;
 
 public class MergeSort {
 	
-	public void MergeSort(int[] A, int p, int r){
+	public static void sort(int[] A, int p, int r){
 		if(p<r) {
 			int q = p+r/2;
-			MergeSort(A,p,q);
-			MergeSort(A,q+1,r);
+			sort(A,p,q);
+			sort(A,q+1,r);
 			Merge(A,p,q,r);
 		}
 
 	}
 
-	public void Merge(int[] A, int p, int q, int r) {
-		Integer infinito = Integer.MAX_VALUE; 
+	public static void Merge(int[] A, int p, int q, int r) {
+		int infinito = Integer.MAX_VALUE; 
 		int n1 = q - p + 1;
 		int n2 = r - q;
 		int[] L = null;
