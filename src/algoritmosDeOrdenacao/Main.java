@@ -4,7 +4,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		int[] A = {8,1,9,2,6,4};
-		MergeSort.sort(A, 0, A.length-1);
+		HeapSort.sort(A);
+		//MergeSort.sort(A, 0, A.length-1);
 		//InsertionSort.sort(A);
 		//BubbleSort.sort(A);
 		//QuickSort.sort(A,0,A.length-1);
