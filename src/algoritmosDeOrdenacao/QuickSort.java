@@ -3,10 +3,10 @@ package algoritmosDeOrdenacao;
 public class QuickSort {
 
 	public static void sort(int A[], int p, int r) {
-		if(p<r) {
-		int q = partition(A, p, r);
-		sort(A, p, q - 1);
-		sort(A, q + 1, r);
+		if (p < r) {
+			int q = partition(A, p, r);
+			sort(A, p, q - 1);
+			sort(A, q + 1, r);
 		}
 	}
 
@@ -14,7 +14,7 @@ public class QuickSort {
 		int troca;
 		int x = A[p];
 		int i = p;
-		for (int j = p+1; j <= r ; j++) {
+		for (int j = p + 1; j <= r; j++) {
 			if (A[j] <= x) {
 				i = i + 1;
 				troca = A[i];

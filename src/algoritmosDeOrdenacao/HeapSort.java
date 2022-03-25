@@ -26,7 +26,7 @@ public class HeapSort {
 
 	private static void refazHeapMax(int[] A, int i) {
 		int trocar;
-		int e = (2 * i)+1;// determinar filho da esquerda
+		int e = (2 * i) + 1;// determinar filho da esquerda
 		int d = (2 * i) + 2;// determinar filho da direita
 		int maior = i;
 		if (e < tamHeap && A[e] > A[maior]) {

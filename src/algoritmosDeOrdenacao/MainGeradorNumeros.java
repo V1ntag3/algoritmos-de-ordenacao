@@ -1,22 +1,33 @@
 package algoritmosDeOrdenacao;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Random;
 
 public class MainGeradorNumeros {
 
-	public static void main(String[] args) throws IOException {
-		File arquivo = new File("/home/");
-		try (FileWriter fw = new FileWriter( arquivo, true )) {
-			// Gerar os 5 números aleatórios e mostrá-los:
-		     for (int i = 0; i < 5; i++) {
-		        int numAleatorio = (int)(Math.random() * 10 ) + 1;
-		        
-		        fw.append(numAleatorio + "");
-		        System.out.println("Número: " + numAleatorio);
-		     }
+	public static void main(String[] args) {
+
+		// instância um objeto da classe Random especificando a semente
+		Random gerador = new Random(1234567890);
+		FileWriter arq = null;
+		try {
+			arq = new FileWriter("numaleatorios.txt");
+			BufferedWriter arquivo = new BufferedWriter(arq);
+			PrintWriter gravarArq = new PrintWriter(arq);
+			// imprime sequência de 10 números inteiros aleatórios entre 0 e 25
+			for (int i = 0; i < 250000; i++) {
+				System.out.println(i);
+				gravarArq.println(gerador.nextInt());
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		   }
+
+	}
 
 }
