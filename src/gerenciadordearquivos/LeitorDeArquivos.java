@@ -40,7 +40,6 @@ public class LeitorDeArquivos {
 			}
 			
 			readFile.close();
-			System.out.println("Leitura do arquivo: "+arquivo+ " terminada ...");
 		} catch (IOException e) {
 			System.err.printf("Erro na leitura do arquivo: "+e.getMessage());//Caso tenha algum erro, aqui é executado
 		}
