@@ -5,6 +5,7 @@ public class MergeSort {
 	public static void sort(int[] A, int p, int r) {
 		if (p < r) {
 			int q = (p + r) / 2;
+			System.out.println("Valor de q: " +q+" p "+p+" r "+r);
 			sort(A, p, q);
 			sort(A, q + 1, r);
 			merge(A, p, q, r);
