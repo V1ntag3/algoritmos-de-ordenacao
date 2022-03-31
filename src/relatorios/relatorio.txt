@@ -1,0 +1,2 @@
+QuickSort,crescente,1,100,0.0,0
+QuickSort,aleatoria,1,1000,0.0,4886

@@ -4,6 +4,7 @@ import java.util.Map;
 public class Escolhas {
 	Map<Integer, Integer> entradasMap = new HashMap<Integer, Integer>();
 	Map<Integer, String> algoritmosMap = new HashMap<Integer, String>();
+	Map<Integer, String> tipos = new HashMap<Integer, String>();
 	
 	Escolhas(){
 		this.entradasMap.put(1, 100);
@@ -20,6 +21,10 @@ public class Escolhas {
 		this.algoritmosMap.put(3, "HeapSort");
 		this.algoritmosMap.put(4, "BubbleSort");
 		this.algoritmosMap.put(5, "InsertionSort");
+		
+		this.tipos.put(1, "crescente");
+		this.tipos.put(2, "decrescente");
+		this.tipos.put(3, "aleatoria");
 	}
 	
 	
@@ -37,6 +42,10 @@ public class Escolhas {
 	
 	public String getNameAlgoritmo(int key) {
 		return this.algoritmosMap.get(key);
+	}
+	
+	public String getTipo(int tipo) {
+		return this.tipos.get(tipo);
 	}
 
 }
