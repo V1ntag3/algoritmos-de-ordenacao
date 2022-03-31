@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Locale.Category;
 
 import algoritmosDeOrdenacao.BubbleSort;
 import algoritmosDeOrdenacao.HeapSort;
@@ -9,6 +10,7 @@ import algoritmosDeOrdenacao.QuickSort;
 import algoritmosDeOrdenacao.StopwatchCPU;
 import geradores.GeradorEntrada;
 import gerenciadordearquivos.LeitorDeArquivos;
+import gerenciadordearquivos.Registrador;
 
 public class Main {
 	
@@ -39,11 +41,12 @@ public class Main {
 		LeitorDeArquivos leitor = new LeitorDeArquivos();
 		Scanner input = new Scanner(System.in);
 		QuickSort quick = new QuickSort(); //Deu certo
-		MergeSort merge = new MergeSort(); //Deu errado na execução
+		MergeSort merge = new MergeSort(); //Deu certo
 		HeapSort heap = new HeapSort(); //Deu certo
 		BubbleSort bubble = new BubbleSort(); //Deu certo
 		InsertionSort insertion = new InsertionSort();		
 		Escolhas escolha = new Escolhas();
+		Registrador registrador = new Registrador();
 		
 		while(true) {
 			
@@ -74,11 +77,16 @@ public class Main {
 			String nomeArquivo = escolha.getNomeArquivo(quantidade, escolhaTipo);
 			int array[] = leitor.lerArquivo(quantidade, nomeArquivo);
 			double tempoDeExecucao;
+			int comparacoes = 0;
 			
 			if(escolhaAlgoritmo == 1) {
 				StopwatchCPU time = new StopwatchCPU();
 				quick.sort(array, 0, array.length - 1);
 				tempoDeExecucao = time.elapsedTime();
+				comparacoes = quick.getComparacoes();
+				
+				registrador.registrar(escolha.getNameAlgoritmo(escolhaAlgoritmo), comparacoes, tempoDeExecucao, 1, quantidade, escolha.getTipo(escolhaTipo));
+				
 			}else if(escolhaAlgoritmo == 2) {
 				StopwatchCPU time = new StopwatchCPU();
 				merge.sort(array, 0, array.length - 1);
@@ -98,7 +106,8 @@ public class Main {
 			}
 			
 			
-			System.out.println("O algoritmo "+escolha.getNameAlgoritmo(escolhaAlgoritmo)+" levou "+ tempoDeExecucao+" segundos para uma entrada de "+ quantidade);
+			System.out.println("O algoritmo "+escolha.getNameAlgoritmo(escolhaAlgoritmo)+" levou "+ tempoDeExecucao+" segundos para uma entrada de "+ quantidade
+					+" e fez "+comparacoes+" comparações");
 		}
 		
 	}
