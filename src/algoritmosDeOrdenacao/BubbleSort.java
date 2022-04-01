@@ -12,6 +12,7 @@ public class BubbleSort {
 		for (int i = 0; i < A.length; i++) {
 			this.comparacoes++;
 			for (int j = A.length - 1; j > i; j--) {
+				this.comparacoes++;
 				if (A[j] < A[j - 1]) {
 					trocar = A[j];
 					A[j] = A[j - 1];

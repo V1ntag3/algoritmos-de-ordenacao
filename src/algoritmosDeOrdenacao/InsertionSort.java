@@ -11,6 +11,7 @@ public class InsertionSort {
 		for (int j = 1; j < A.length; j++) {
 			int chave = A[j];
 			int i = j - 1;
+			this.comparacoes++;
 			while (i >= 0 && A[i] > chave) {
 				this.comparacoes++;
 				A[i + 1] = A[i];
