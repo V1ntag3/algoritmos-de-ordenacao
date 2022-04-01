@@ -1,3 +1,2 @@
-
-QuickSort,crescente,1,5000,1.5625E7,12497500
 QuickSort,crescente,1,100,0.0,4950
+QuickSort,aleatoria,1,200000,0.015625,4426619
