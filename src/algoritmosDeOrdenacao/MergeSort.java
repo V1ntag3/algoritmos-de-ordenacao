@@ -17,7 +17,7 @@ public class MergeSort {
 		return;
 	}
 
-	public  void merge(int[] A, int p, int q, int r) {
+	public void merge(int[] A, int p, int q, int r) {
 		int n = q - p + 2;
 		int m = r - q + 1;
 
