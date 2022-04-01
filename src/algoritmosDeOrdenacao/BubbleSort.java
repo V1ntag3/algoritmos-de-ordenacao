@@ -1,6 +1,7 @@
 package algoritmosDeOrdenacao;
 
-public class BubbleSort {
+public class BubbleSort 
+{
 	public static void sort(int[] A) {
 		int trocar;
 		for (int i = 0; i < A.length; i++) {
@@ -13,4 +14,5 @@ public class BubbleSort {
 			}
 		}
 	}
+
 }

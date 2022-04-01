@@ -1,0 +1,4 @@
+QuickSort,decrescente,1,100,0.0,4950
+QuickSort,decrescente,1,100,0.0,4950
+QuickSort,decrescente,1,100,0.0,4950
+QuickSort,crescente,1,100,0.0,4950

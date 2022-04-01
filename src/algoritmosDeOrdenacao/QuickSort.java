@@ -19,8 +19,9 @@ public class QuickSort {
 		int x = A[p];
 		int i = p;
 		for (int j = p + 1; j <= r; j++) {
+			this.comparacoes++;
 			if (A[j] <= x) {
-				this.comparacoes++;
+				
 				i = i + 1;
 				troca = A[i];
 				A[i] = A[j];
@@ -37,4 +38,3 @@ public class QuickSort {
 		return this.comparacoes;
 	}
 }
-//OK

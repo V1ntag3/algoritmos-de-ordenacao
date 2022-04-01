@@ -21,7 +21,7 @@ import java.lang.management.ManagementFactory;
  * a programming task.
  *
  * See {@link Stopwatch} for a version that measures wall-clock time (the real
- * time that elapses). Atividade de Participa��o 04 7
+ * time that elapses). Atividade de Participao 04 7
  *
  * @author Josh Hug
  * @author Robert Sedgewick
@@ -47,7 +47,7 @@ public class StopwatchCPU {
 	 */
 	public double elapsedTime() {
 		long now = threadTimer.getCurrentThreadCpuTime();
-		return (now - start);
+		return (now - start)/NANOSECONDS_PER_SECOND;
 	}
 
 	/**
