@@ -37,3 +37,7 @@ MergeSort,decrescente,1,200000,0.03125,7075712
 MergeSort,aleatoria,1,200000,0.03125,10613568
 QuickSort,aleatoria,1,200000,0.015625,4421669
 QuickSort,aleatoria,1,200000,0.015625,4421669
+QuickSort,crescente,1,200000,0.015625,0
+QuickSort,crescente,1,200000,0.015625,131071
+QuickSort,decrescente,1,1000,0.0,131582
+QuickSort,aleatoria,1,200000,0.109375,1074489
