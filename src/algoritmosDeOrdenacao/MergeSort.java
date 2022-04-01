@@ -1,8 +1,13 @@
 package algoritmosDeOrdenacao;
 
 public class MergeSort {
+	public int comparacoes;
 
-	public static void sort(int[] A, int p, int r) {
+	public MergeSort() {
+		this.comparacoes = 0;
+	}
+
+	public void sort(int[] A, int p, int r) {
 		if (p < r) {
 			int q = (p + r) / 2;
 			sort(A, p, q);
@@ -12,7 +17,7 @@ public class MergeSort {
 		return;
 	}
 
-	public static void merge(int[] A, int p, int q, int r) {
+	public  void merge(int[] A, int p, int q, int r) {
 		int n = q - p + 2;
 		int m = r - q + 1;
 
@@ -32,7 +37,7 @@ public class MergeSort {
 		i = 0;
 		j = 0;
 		for (k = p; k <= r; k++) {
-
+			this.comparacoes++;
 			if (L[i] < R[j]) {
 				A[k] = L[i];
 				i = i + 1;
@@ -42,5 +47,9 @@ public class MergeSort {
 
 			}
 		}
+	}
+
+	public int getComparacoes() {
+		return this.comparacoes;
 	}
 }

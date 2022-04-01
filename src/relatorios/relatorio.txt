@@ -1,2 +1,10 @@
 QuickSort,crescente,1,100,0.0,4950
 QuickSort,aleatoria,1,200000,0.015625,4426619
+QuickSort,aleatoria,1,200000,0.03125,4421669
+InsertionSort,aleatoria,1,200000,18.171875,0
+InsertionSort,aleatoria,1,200000,18.015625,0
+QuickSort,aleatoria,1,200000,0.03125,4421669
+MergeSort,aleatoria,1,200000,0.03125,4421669
+HeapSort,aleatoria,1,200000,0.046875,4421669
+BubbleSort,aleatoria,1,200000,68.171875,4421669
+InsertionSort,aleatoria,1,200000,18.109375,4421669
