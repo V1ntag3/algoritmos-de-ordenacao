@@ -14,13 +14,19 @@ public class QuickSort {
 		int x = A[q];
 		int trocar;
 		while (i <= j) {
+			this.comparacoes++;
 			while (A[i] < x) {
 				i++;
-			}
-			while (A[j] > x) {
-				j--;
+				this.comparacoes++;
 			}
 			this.comparacoes++;
+			while (A[j] > x) {
+				j--;
+				this.comparacoes++;
+			}
+			this.comparacoes++;
+			this.comparacoes++;
+			
 			if (i <= j) {
 				trocar = A[i];
 				A[i] = A[j];
@@ -29,6 +35,9 @@ public class QuickSort {
 				j--;
 			}
 		}
+		this.comparacoes++;
+		this.comparacoes++;
+		this.comparacoes++;
 		if (p < j) {
 			sort(A, p, j);
 		}

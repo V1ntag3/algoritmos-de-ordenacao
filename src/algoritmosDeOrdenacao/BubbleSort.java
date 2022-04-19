@@ -1,7 +1,7 @@
 package algoritmosDeOrdenacao;
 
 public class BubbleSort {
-	public int comparacoes;
+	public long comparacoes;
 
 	public BubbleSort() {
 		this.comparacoes = 0;
@@ -13,16 +13,20 @@ public class BubbleSort {
 			this.comparacoes++;
 			for (int j = A.length - 1; j > i; j--) {
 				this.comparacoes++;
+				this.comparacoes++;
 				if (A[j] < A[j - 1]) {
 					trocar = A[j];
 					A[j] = A[j - 1];
 					A[j - 1] = trocar;
 				}
 			}
+			this.comparacoes++;
 		}
+		this.comparacoes++;
+		
 	}
 
-	public int getComparacoes() {
+	public long getComparacoes() {
 		return this.comparacoes;
 	}
 }

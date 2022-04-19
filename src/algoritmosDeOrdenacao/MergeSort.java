@@ -8,6 +8,7 @@ public class MergeSort {
 	}
 
 	public void sort(int[] A, int p, int r) {
+		this.comparacoes++;
 		if (p < r) {
 			int q = (p + r) / 2;
 			sort(A, p, q);
@@ -29,14 +30,19 @@ public class MergeSort {
 
 		for (i = 0; i < n - 1; i++) {
 			L[i] = A[p + i];
+			this.comparacoes++;
 		}
+		this.comparacoes++;
 		for (j = 0; j < m - 1; j++) {
+			this.comparacoes++;
 			R[j] = A[q + j + 1];
 		}
+		this.comparacoes++;
 
 		i = 0;
 		j = 0;
 		for (k = p; k <= r; k++) {
+			this.comparacoes++;
 			this.comparacoes++;
 			if (L[i] < R[j]) {
 				A[k] = L[i];
@@ -47,6 +53,7 @@ public class MergeSort {
 
 			}
 		}
+		this.comparacoes++;
 	}
 
 	public int getComparacoes() {

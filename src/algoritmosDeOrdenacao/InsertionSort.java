@@ -1,7 +1,7 @@
 package algoritmosDeOrdenacao;
 
 public class InsertionSort {
-	public int comparacoes;
+	public long comparacoes;
 
 	public InsertionSort() {
 		this.comparacoes = 0;
@@ -17,11 +17,14 @@ public class InsertionSort {
 				A[i + 1] = A[i];
 				i = i - 1;
 			}
+			this.comparacoes++;
+			
 			A[i + 1] = chave;
 		}
+		this.comparacoes++;
 	}
 
-	public int getComparacoes() {
+	public long getComparacoes() {
 		return this.comparacoes;
 	}
 }
